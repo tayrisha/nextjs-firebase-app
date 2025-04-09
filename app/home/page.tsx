@@ -19,7 +19,7 @@ export default function HomePage() {
     router.push("/login");
   };
 
-  if (!user) return null; // optional loading fallback
+  if (!user) return null; 
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 px-4">
