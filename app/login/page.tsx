@@ -31,58 +31,61 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-gray-50">
-      <div className="w-full max-w-md bg-white p-6 rounded-lg shadow">
-        <h1 className="text-2xl font-bold mb-4 text-center">
-          {isRegistering ? "Create an Account" : "Log In"}
-        </h1>
-        {error && <p className="text-red-500 mb-2">{error}</p>}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {isRegistering && (
-            <input
-              type="text"
-              placeholder="Full Name"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              required
-              className="w-full px-3 py-2 border rounded"
-            />
-          )}
-          <input
-            type="email"
-            placeholder="Email Address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full px-3 py-2 border rounded"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="w-full px-3 py-2 border rounded"
-          />
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded"
-          >
-            {isRegistering ? "Sign Up" : "Log In"}
-          </button>
-        </form>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4">
+    <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl">
+      <h1 className="text-3xl font-extrabold text-gray-800 text-center mb-6">
+        {isRegistering ? "Create an Account" : "Welcome Back"}
+      </h1>
 
-        <p className="mt-4 text-sm text-center">
-          {isRegistering ? "Already have an account?" : "Need an account?"}{" "}
-          <button
-            type="button"
-            onClick={() => setIsRegistering(!isRegistering)}
-            className="text-blue-600 hover:underline"
-          >
-            {isRegistering ? "Log In" : "Sign Up"}
-          </button>
-        </p>
-      </div>
+      {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {isRegistering && (
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          />
+        )}
+        <input
+          type="email"
+          placeholder="Email Address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        />
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg font-semibold transition duration-300"
+        >
+          {isRegistering ? "Sign Up" : "Log In"}
+        </button>
+      </form>
+
+      <p className="mt-6 text-sm text-center text-gray-600">
+        {isRegistering ? "Already have an account?" : "Need an account?"}{" "}
+        <button
+          type="button"
+          onClick={() => setIsRegistering(!isRegistering)}
+          className="text-indigo-600 hover:underline font-medium"
+        >
+          {isRegistering ? "Log In" : "Sign Up"}
+        </button>
+      </p>
     </div>
+  </div>
+  
   );
 }

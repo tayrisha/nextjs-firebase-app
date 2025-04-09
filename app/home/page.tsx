@@ -22,18 +22,22 @@ export default function HomePage() {
   if (!user) return null; // optional loading fallback
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow text-center">
-        <h1 className="text-2xl font-semibold mb-4">
-          Hey, {user.displayName || "Friend"}! You’re successfully logged in.
-        </h1>
-        <button
-          onClick={handleLogout}
-          className="mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded"
-        >
-          Logout
-        </button>
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 px-4">
+    <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 text-center">
+      <h1 className="text-3xl font-bold text-gray-800 mb-4">
+        Hey, {user.displayName || "Friend"}! 👋
+      </h1>
+      <p className="text-gray-600 text-sm mb-6">
+        You’re successfully logged in. This is your homepage!
+      </p>
+      <button
+        onClick={handleLogout}
+        className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300"
+      >
+        Logout
+      </button>
     </div>
+  </div>
+
   );
 }
